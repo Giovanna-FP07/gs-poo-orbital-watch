@@ -1,3 +1,10 @@
+/**
+ * Classe que representa um sensor de temperatura.
+ * Herda de ComponenteEspacial e implementa a interface Sensor.
+ * 
+ * Responsável por simular leituras de temperatura e emitir alertas.
+ */
+
 package br.com.orbitalwatch.model;
 
 import java.util.Random;
