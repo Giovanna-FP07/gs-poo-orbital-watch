@@ -1,3 +1,10 @@
+/**
+ * Classe principal do sistema Orbital Watch.
+ * 
+ * Responsável por executar o menu interativo, integrar sensores,
+ * dados da missão e sistemas de propulsão.
+ */
+
 package br.com.orbitalwatch.main;
 
 import java.util.Scanner;
@@ -5,6 +12,10 @@ import br.com.orbitalwatch.model.*;
 
 public class SistemaMonitoramento {
 
+/**
+ * Método principal que inicializa o sistema, cria os objetos e executa o menu interativo.
+ */
+    
     public static void main(String[] args) {
 
         Scanner scanner = new Scanner(System.in);
@@ -96,6 +107,10 @@ public class SistemaMonitoramento {
         scanner.close();
     }
 
+/**
+ * Executa a verificação dos sensores e exibe os alertas gerados.
+ */
+    
     public static void verificarSensores(
             SensorTemperatura sensorTemp,
             SensorPressao sensorPressao,
@@ -108,6 +123,10 @@ public class SistemaMonitoramento {
         sensorRadiacao.verificarAlerta();
     }
 
+/**
+ * Permite ao usuário escolher o tipo de propulsão e definir a potência desejada.
+ */
+    
     public static void controlarPropulsao(
             Scanner scanner,
             SistemaPropulsao propulsaoQuimica,
@@ -141,6 +160,10 @@ public class SistemaMonitoramento {
         System.out.println("Empuxo gerado: " + propulsaoEscolhida.calcularEmpuxo());
     }
 
+/**
+ * Permite simular um novo nível de combustível para testar os alertas da missão.
+ */
+    
     public static void simularAlertaCombustivel(
             Scanner scanner,
             DadosMissao missao
@@ -153,6 +176,10 @@ public class SistemaMonitoramento {
         missao.setNivelCombustivel(combustivel);
     }
 
+/**
+ * Exibe o status completo dos sensores, dados da missão e sistemas de propulsão.
+ */
+    
     public static void exibirStatusCompleto(
             SensorTemperatura sensorTemp,
             SensorPressao sensorPressao,
