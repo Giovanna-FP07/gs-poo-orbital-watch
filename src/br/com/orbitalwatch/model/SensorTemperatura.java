@@ -20,6 +20,10 @@ public class SensorTemperatura extends ComponenteEspacial implements Sensor {
         this.random = new Random();
     }
 
+/**
+ * Gera uma leitura simulada de temperatura utilizando valores aleatórios.
+ */
+    
     @Override
     public double lerValor() {
         double valor = -20 + random.nextDouble() * 120;
@@ -37,6 +41,11 @@ public class SensorTemperatura extends ComponenteEspacial implements Sensor {
         return "Sensor de Temperatura";
     }
 
+/**
+ * Verifica o valor da temperatura e exibe o nível de alerta correspondente:
+ * NORMAL, ATENÇÃO, ALERTA ou CRÍTICO.
+ */
+    
     @Override
     public void verificarAlerta() {
         double valor = lerValor();
