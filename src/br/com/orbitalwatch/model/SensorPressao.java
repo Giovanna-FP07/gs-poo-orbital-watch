@@ -1,3 +1,10 @@
+/**
+ * Classe que representa um sensor de pressão.
+ * Herda de ComponenteEspacial e implementa a interface Sensor.
+ * 
+ * Responsável por simular leituras de pressão e emitir alertas.
+ */
+
 package br.com.orbitalwatch.model;
 
 import java.util.Random;
@@ -13,6 +20,10 @@ public class SensorPressao extends ComponenteEspacial implements Sensor {
         this.random = new Random();
     }
 
+/**
+ * Gera uma leitura simulada de pressão utilizando valores aleatórios.
+ */
+    
     @Override
     public double lerValor() {
         return 80 + random.nextDouble() * 80;
@@ -28,6 +39,11 @@ public class SensorPressao extends ComponenteEspacial implements Sensor {
         return "Sensor de Pressão";
     }
 
+/**
+ * Verifica o valor da pressão e exibe o nível de alerta correspondente:
+ * NORMAL, ATENÇÃO, ALERTA ou CRÍTICO.
+ */
+    
     @Override
     public void verificarAlerta() {
         double valor = lerValor();
