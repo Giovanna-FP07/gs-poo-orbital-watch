@@ -1,3 +1,10 @@
+/**
+ * Classe responsável por armazenar e proteger os dados da missão espacial.
+ * 
+ * Demonstra o conceito de encapsulamento utilizando atributos privados,
+ * validações em setters e proteção de coordenadas por código de acesso.
+ */
+
 package br.com.orbitalwatch.model;
 
 public class DadosMissao {
@@ -17,6 +24,10 @@ public class DadosMissao {
         setNumeroTripulantes(numeroTripulantes);
     }
 
+/**
+ * Retorna as coordenadas da missão apenas se o código de acesso informado for válido.
+ */
+    
     public String getCoordenadas(String codigoInformado) {
         if (this.codigoAcesso.equals(codigoInformado)) {
             return this.coordenadas;
@@ -25,6 +36,10 @@ public class DadosMissao {
         return "Acesso negado: código inválido.";
     }
 
+/**
+ * Altera as coordenadas da missão somente após validação do código de acesso.
+ */
+    
     public void setCoordenadas(String coordenadas, String codigoInformado) {
         if (!this.codigoAcesso.equals(codigoInformado)) {
             System.out.println("Acesso negado: não foi possível alterar as coordenadas.");
@@ -39,6 +54,11 @@ public class DadosMissao {
         this.coordenadas = coordenadas;
     }
 
+/**
+ * Atualiza o nível de combustível com validação e emite alertas automáticos
+ * quando o combustível estiver abaixo dos limites definidos.
+ */
+    
     public double getNivelCombustivel() {
         return this.nivelCombustivel;
     }
@@ -84,6 +104,10 @@ public class DadosMissao {
         this.numeroTripulantes = numeroTripulantes;
     }
 
+/**
+ * Exibe um resumo dos dados da missão, respeitando a proteção das coordenadas.
+ */
+    
     public void exibirResumo(String codigoInformado) {
         System.out.println("\n=== DADOS DA MISSÃO ===");
         System.out.println("Coordenadas: " + getCoordenadas(codigoInformado));
