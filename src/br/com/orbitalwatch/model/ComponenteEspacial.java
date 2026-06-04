@@ -1,3 +1,10 @@
+/**
+ * Classe abstrata que representa um componente espacial genérico.
+ * Serve como base para os sensores do sistema Orbital Watch.
+ * 
+ * Demonstra o uso de classe abstrata, atributos comuns e métodos concretos.
+ */
+
 package br.com.orbitalwatch.model;
 
 public abstract class ComponenteEspacial {
@@ -21,7 +28,12 @@ public abstract class ComponenteEspacial {
     public void desligar() {
         this.status = "DESLIGADO";
     }
-
+    
+/**
+ * Método abstrato que obriga as classes filhas a implementarem
+ * sua própria forma de verificar o status do componente.
+ */
+    
     public abstract void verificarStatus();
 
     public int getId() {
