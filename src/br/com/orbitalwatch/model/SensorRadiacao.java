@@ -1,3 +1,10 @@
+/**
+ * Classe que representa um sensor de radiação.
+ * Herda de ComponenteEspacial e implementa a interface Sensor.
+ * 
+ * Responsável por simular leituras de radiação e emitir alertas.
+ */
+
 package br.com.orbitalwatch.model;
 
 import java.util.Random;
@@ -13,6 +20,10 @@ public class SensorRadiacao extends ComponenteEspacial implements Sensor {
         this.random = new Random();
     }
 
+/**
+ * Gera uma leitura simulada de radiação utilizando valores aleatórios.
+ */
+    
     @Override
     public double lerValor() {
         return random.nextDouble() * 10;
@@ -28,6 +39,11 @@ public class SensorRadiacao extends ComponenteEspacial implements Sensor {
         return "Sensor de Radiação";
     }
 
+/**
+ * Verifica o valor da radiação e exibe o nível de alerta correspondente:
+ * NORMAL, ATENÇÃO, ALERTA ou CRÍTICO.
+ */
+    
     @Override
     public void verificarAlerta() {
         double valor = lerValor();
